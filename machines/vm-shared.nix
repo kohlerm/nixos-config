@@ -69,7 +69,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 
   # Manage fonts. We pull these from a secret directory since most of these
   # fonts require a purchase.

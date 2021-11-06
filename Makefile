@@ -1,5 +1,5 @@
 # Connectivity info for Linux VM
-NIXADDR ?= unset
+NIXADDR = 192.168.81.128
 NIXPORT ?= 22
 NIXUSER ?= mitchellh
 
@@ -60,7 +60,7 @@ vm/bootstrap0:
 vm/bootstrap:
 	NIXUSER=root $(MAKE) vm/copy
 	NIXUSER=root $(MAKE) vm/switch
-	$(MAKE) vm/secrets
+	#$(MAKE) vm/secrets
 	ssh $(SSH_OPTIONS) -p$(NIXPORT) $(NIXUSER)@$(NIXADDR) " \
 		sudo reboot; \
 	"

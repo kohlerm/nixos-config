@@ -1,0 +1,428 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Nov  6 14:24:43 2021
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+_fzf_orig_completion_diff = complete -F %s diff #_longopt
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+STARSHIP_SESSION_KEY = 9529266839589135
+# environment
+I3SOCK = /tmp/i3-kohlerm.O3QTI4/ipc-socket.593
+# environment
+WSLENV = 
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /tmp/vscode-ipc-40ddae10-2804-4a6d-b464-e4fc783dae41.sock
+# environment
+VSCODE_CWD = /home/kohlerm/nixos-config
+# environment
+WINDOWID = 16777219
+# environment
+_fzf_orig_completion_uniq = complete -F %s uniq #_longopt
+# environment
+VNCDESKTOP = W-R90XQ7HM.localdomain:1 (kohlerm)
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 4)
+NIXUSER = mitchellh
+# environment
+GOPATH = /home/kohlerm/go
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+_fzf_orig_completion_du = complete -F %s du #_longopt
+# environment
+_fzf_orig_completion_tail = complete -F %s tail #_longopt
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/kohlerm/nixos-config
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+GI_TYPELIB_PATH = /nix/store/yqszmcnba775z8rd8mwsyjdjb8fvi8cn-gtk+3-3.24.30/lib/girepository-1.0:/nix/store/mkfzligg4v64nxrcsrkfw0w04jiklnmx-librsvg-2.52.0/lib/girepository-1.0:/nix/store/acrb08r1ngjy4nqy6bp3ryx6m211gy4i-libsecret-0.20.4/lib/girepository-1.0:/nix/store/8d6y21ynp10wz0vkhmcp4r5l19hp5p1r-harfbuzz-2.8.2/lib/girepository-1.0:/nix/store/7fk8k8bd6sqxbavz5ip05mbfr94mc9z1-pango-1.48.10/lib/girepository-1.0:/nix/store/7qbm5l1sj0gigbm2jxvsw4mdss2xapz2-gdk-pixbuf-2.42.6/lib/girepository-1.0:/nix/store/zdz1sd3fragbaaapknny12ajzx20g9wq-atk-2.36.0/lib/girepository-1.0:/nix/store/2wspx6llp05b4sn57zwjmm3wmwgzdp9c-gtk+-2.24.32/lib/girepository-1.0:/nix/store/43nphj0pvw1zyda5f3zxqlrbjnxs6zqr-gsettings-desktop-schemas-41.0/lib/girepository-1.0:/nix/store/byzkgpdgcfcsr4dj3arn9npzxmgx4l1s-gobject-introspection-1.70.0/lib/girepository-1.0:/nix/store/1l2ix7srd1ghir5c7y8wcd0zy1rh5rjw-libgnome-keyring-3.12.0/lib/girepository-1.0:/nix/store/96xk3i5i6w2880zm7z904khz7lqb2na6-libnotify-0.7.9/lib/girepository-1.0:/nix/store/nr7rzzgm69973g5rjrp9bwckf9267xsc-at-spi2-core-2.42.0/lib/girepository-1.0:/nix/store/y331zi6av5k9b498gsfgbd3h6fzqszj3-libdbusmenu-glib-16.04.0/lib/girepository-1.0
+# environment
+XDG_DATA_DIRS = /nix/store/83z5apcmkg5za0p5l8n5kl1pzg81b8jp-vscode-1.61.2/share:/nix/store/yqszmcnba775z8rd8mwsyjdjb8fvi8cn-gtk+3-3.24.30/share/gsettings-schemas/gtk+3-3.24.30:/nix/store/43nphj0pvw1zyda5f3zxqlrbjnxs6zqr-gsettings-desktop-schemas-41.0/share/gsettings-schemas/gsettings-desktop-schemas-41.0:/nix/store/c9lwxa3jan1s7qrqiq6yl52cnpn4m343-termite-15/share:/nix/store/yqszmcnba775z8rd8mwsyjdjb8fvi8cn-gtk+3-3.24.30/share/gsettings-schemas/gtk+3-3.24.30:/nix/store/43nphj0pvw1zyda5f3zxqlrbjnxs6zqr-gsettings-desktop-schemas-41.0/share/gsettings-schemas/gsettings-desktop-schemas-41.0:/home/kohlerm/.nix-profile/share/:
+# environment
+OLDPWD = /home/kohlerm
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/kohlerm/.config/Code/CachedData/6cba118ac49a1b88332f312a8f67186f7f3c1643
+# environment
+_fzf_orig_completion_ln = complete -F %s ln #_longopt
+# environment
+LANG = C
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/kohlerm/nixos-config
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+_fzf_orig_completion_sort = complete -F %s sort #_longopt
+# makefile (from 'Makefile', line 2)
+NIXADDR = 192.168.81.128
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=c61e5496-e436-40d6-9526-c20ab4847040&iid=c61e5496-e436-40d6-9526-c20ab4847040&sid=c61e5496-e436-40d6-9526-c20ab4847040","uploadToServer":true}
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# environment
+_fzf_orig_completion_awk = complete -F %s awk #_longopt
+# automatic
+@F = $(notdir $@)
+# environment
+FZF_ALT_C_COMMAND = bfs -type d -nohidden
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 3558
+# environment
+HISTIGNORE = &:[ ]*:exit:ls:bg:fg:history
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+FZF_DEFAULT_COMMAND = rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null
+# environment
+_fzf_orig_completion_rmdir = complete -F %s rmdir #_longopt
+# environment
+_fzf_orig_completion_cat = complete -F %s cat #_longopt
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = disabled:
+# environment
+_fzf_orig_completion_grep = complete -F %s grep #_longopt
+# environment
+_fzf_orig_completion_sed = complete -F %s sed #_longopt
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 7)
+NIXBLOCKDEVICE = sda
+# environment
+BREAKPAD_DUMP_LOCATION = /home/kohlerm/.config/Code/exthost Crash Reports
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# environment
+_fzf_orig_completion_rm = complete -F %s rm #_longopt
+# environment
+_fzf_orig_completion_head = complete -F %s head #_longopt
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 4
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /nix/store/qyaz4niivdkrabzj04q3420fg89v9hzh-glib-2.70.0-bin/bin:/home/kohlerm/go/bin:/home/kohlerm/.cargo/bin:/home/kohlerm/go/bin:/home/kohlerm/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/KaliLinux.54290C8133FEE_1.9.0.0_x64__ey8k8hqnwqnmg:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/SapMachine/JDK/11/bin:/mnt/c/Program Files/Alacritty/:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2/libnvvp:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/nu/bin/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/Pololu/USB AVR Programmer v2/bin:/mnt/c/WINDOWS/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/swig/swigwin-4.0.2:/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2020.3.0/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Users/D041705/AppData/Local/Programs/Python/Python38/Scripts/:/mnt/c/Users/D041705/AppData/Local/Programs/Python/Python38/:/mnt/c/Users/D041705/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/D041705/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/D041705/AppData/Local/GitHubDesktop/bin:/mnt/c/Program Files (x86)/q-TextAsData:/mnt/c/src/flutter/bin:/mnt/c/Users/D041705/.dotnet/tools:/mnt/c/Users/D041705/AppData/Roaming/npm:/usr/local/go/bin:/home/kohlerm/.fzf/bin:/usr/local/go/bin
+# environment
+NIX_SSL_CERT_FILE = /etc/ssl/certs/ca-certificates.crt
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+_fzf_orig_completion_telnet = complete -F %s telnet #_known_hosts
+# environment
+_fzf_orig_completion_ls = complete -F %s ls #_longopt
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?F = $(notdir $?)
+# environment
+NAME = W-R90XQ7HM
+# environment
+HOSTTYPE = x86_64
+# automatic
++F = $(notdir $+)
+# environment
+WSL_INTEROP = /run/WSL/8_interop
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+GIO_EXTRA_MODULES = /nix/store/ldczvaiji49dbgpab49h0l1xgz2q221p-gconf-3.2.6/lib/gio/modules:/nix/store/2s9z6fsfpvkxfhm83rwv6sdlhlgahd06-dconf-0.40.0-lib/lib/gio/modules:/nix/store/ldczvaiji49dbgpab49h0l1xgz2q221p-gconf-3.2.6/lib/gio/modules:/nix/store/2s9z6fsfpvkxfhm83rwv6sdlhlgahd06-dconf-0.40.0-lib/lib/gio/modules:/nix/store/2s9z6fsfpvkxfhm83rwv6sdlhlgahd06-dconf-0.40.0-lib/lib/gio/modules:/nix/store/2s9z6fsfpvkxfhm83rwv6sdlhlgahd06-dconf-0.40.0-lib/lib/gio/modules
+# environment
+LOGNAME = kohlerm
+# environment
+FZF_CTRL_T_COMMAND = rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null
+# makefile
+.DEFAULT_GOAL := switch
+# environment
+_fzf_orig_completion_cd = complete -o nospace -F %s cd #_cd
+# environment
+EDITOR = vim
+# environment
+DISPLAY = :1
+# environment
+USER = kohlerm
+# default
+MAKE_VERSION := 4.3
+# environment
+NIX_PROFILES = /nix/var/nix/profiles/default /home/kohlerm/.nix-profile
+# environment
+_fzf_orig_completion_git = complete -o bashdefault -o default -o nospace -F %s git #__git_wrap__git_main
+# makefile (from 'Makefile', line 17)
+SSH_OPTIONS = -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+# environment
+_fzf_orig_completion_mv = complete -F %s mv #_longopt
+# environment
+STARSHIP_SHELL = bash
+# environment
+_ = /nix/store/83z5apcmkg5za0p5l8n5kl1pzg81b8jp-vscode-1.61.2/lib/vscode/code
+# environment
+_fzf_orig_completion_less = complete -F %s less #_longopt
+# environment
+_fzf_orig_completion_cp = complete -F %s cp #_longopt
+# environment
+COLORTERM = truecolor
+# environment
+GDK_PIXBUF_MODULE_FILE = /nix/store/mkfzligg4v64nxrcsrkfw0w04jiklnmx-librsvg-2.52.0/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+# makefile (from 'Makefile', line 13)
+NIXNAME = vm-intel
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/kohlerm
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /home/kohlerm/.config/Code/1.61.2-main.sock
+# environment
+TERM = xterm-termite
+# environment
+_fzf_orig_completion_ld = complete -F %s ld #_longopt
+# environment
+_fzf_orig_completion_ftp = complete -F %s ftp #_known_hosts
+# environment
+_fzf_orig_completion_pushd = complete -o nospace -F %s pushd #_cd
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# environment
+NIX_PATH = /home/kohlerm/.nix-defexpr/channels
+# environment
+_fzf_orig_completion_wc = complete -F %s wc #_longopt
+# makefile (from 'Makefile', line 10)
+MAKEFILE_DIR := /home/kohlerm/nixos-config
+# default
+SUFFIXES := 
+# environment
+_fzf_orig_completion_tee = complete -F %s tee #_longopt
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6402
+# environment
+WSL_DISTRO_NAME = kali-linux
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 3)
+NIXPORT = 22
+# environment
+_fzf_orig_completion_vim = complete -F %s vim #_filedir_xspec
+# variable set hash-table stats:
+# Load=128/1024=12%, Rehash=0, Collisions=11/163=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+ 
+# . (device 2064, inode 3334958): 23 files, no impossibilities.
+
+# 23 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-11-06 13:45:57.638885
+#  File has been updated.
+#  Successfully updated.
+
+vm/secrets:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 71):
+	# GPG keyring
+	rsync -av -e 'ssh $(SSH_OPTIONS)' \
+		--exclude='.#*' \
+		--exclude='S.*' \
+		--exclude='*.conf' \
+		$(HOME)/.gnupg/ $(NIXUSER)@$(NIXADDR):~/.gnupg
+	# SSH keys
+	rsync -av -e 'ssh $(SSH_OPTIONS)' \
+		--exclude='environment' \
+		$(HOME)/.ssh/ $(NIXUSER)@$(NIXADDR):~/.ssh
+
+switch:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#${NIXNAME}"
+
+vm/bootstrap:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 61):
+	NIXUSER=root $(MAKE) vm/copy
+	NIXUSER=root $(MAKE) vm/switch
+	#$(MAKE) vm/secrets
+	ssh $(SSH_OPTIONS) -p$(NIXPORT) $(NIXUSER)@$(NIXADDR) " \
+		sudo reboot; \
+	"
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+vm/bootstrap0:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 33):
+	ssh $(SSH_OPTIONS) -p$(NIXPORT) root@$(NIXADDR) " \
+		parted /dev/$(NIXBLOCKDEVICE) -- mklabel gpt; \
+		parted /dev/$(NIXBLOCKDEVICE) -- mkpart primary 512MiB -8GiB; \
+		parted /dev/$(NIXBLOCKDEVICE) -- mkpart primary linux-swap -8GiB 100\%; \
+		parted /dev/$(NIXBLOCKDEVICE) -- mkpart ESP fat32 1MiB 512MiB; \
+		parted /dev/$(NIXBLOCKDEVICE) -- set 3 esp on; \
+		mkfs.ext4 -L nixos /dev/$(NIXBLOCKDEVICE)1; \
+		mkswap -L swap /dev/$(NIXBLOCKDEVICE)2; \
+		mkfs.fat -F 32 -n boot /dev/$(NIXBLOCKDEVICE)3; \
+		mount /dev/disk/by-label/nixos /mnt; \
+		mkdir -p /mnt/boot; \
+		mount /dev/disk/by-label/boot /mnt/boot; \
+		nixos-generate-config --root /mnt; \
+		sed --in-place '/system\.stateVersion = .*/a \
+			nix.package = pkgs.nixUnstable;\n \
+			nix.extraOptions = \"experimental-features = nix-command flakes\";\n \
+  			services.openssh.enable = true;\n \
+			services.openssh.passwordAuthentication = true;\n \
+			services.openssh.permitRootLogin = \"yes\";\n \
+			users.users.root.initialPassword = \"root\";\n \
+		' /mnt/etc/nixos/configuration.nix; \
+		nixos-install --no-root-passwd; \
+		reboot; \
+	"
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+iso/nixos.iso:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 101):
+	cd iso; ./build.sh
+
+vm/copy:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 84):
+	rsync -av -e 'ssh $(SSH_OPTIONS) -p$(NIXPORT)' \
+		--exclude='vendor/' \
+		--exclude='.git/' \
+		--exclude='.git-crypt/' \
+		--exclude='iso/' \
+		--rsync-path="sudo rsync" \
+		$(MAKEFILE_DIR)/ $(NIXUSER)@$(NIXADDR):/nix-config
+
+vm/switch:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 95):
+	ssh $(SSH_OPTIONS) -p$(NIXPORT) $(NIXUSER)@$(NIXADDR) " \
+		sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake \"/nix-config#${NIXNAME}\" \
+	"
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test --flake ".#$(NIXNAME)"
+
+# files hash-table stats:
+# Load=12/1024=1%, Rehash=0, Collisions=0/22=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 36 / storage = 313 B / avg = 8 B
+# current buf: size = 8162 B / used = 313 B / count = 36 / avg = 8 B
+
+# strcache performance: lookups = 48 / hit rate = 25%
+# hash-table stats:
+# Load=36/8192=0%, Rehash=0, Collisions=0/48=0%
+# Finished Make data base on Sat Nov  6 14:24:43 2021
+
+ 

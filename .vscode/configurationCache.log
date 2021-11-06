@@ -1,0 +1,1 @@
+{"buildTargets":["iso/nixos.iso","switch","test","vm/bootstrap","vm/bootstrap0","vm/copy","vm/secrets","vm/switch"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

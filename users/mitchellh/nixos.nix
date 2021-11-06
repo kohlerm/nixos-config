@@ -6,12 +6,17 @@
     home = "/home/mitchellh";
     extraGroups = [ "docker" "wheel" ];
     shell = pkgs.fish;
-    hashedPassword = "$6$p5nPhz3G6k$6yCK0m3Oglcj4ZkUXwbjrG403LBZkfNwlhgrQAqOospGJXJZ27dI84CbIYBNsTgsoH650C1EBsbCKesSVPSpB1";
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbTIKIPtrymhvtTvqbU07/e7gyFJqNS4S0xlfrZLOaY mitchellh"
-    ];
+    hashedPassword = "$6$r5lqrw5ZhSSapNmt$hOORz3HkwCY7mKOl6aY9o5q8/w9VfHFP96rTzhYmzx7.OqnVQwlmSSIJgz0aBC0IGhRKPVYe1IM..0f26vrBX.";
+    
   };
-
+  users.users.kohler = {
+    isNormalUser = true;
+    home = "/home/mitchellh";
+    extraGroups = [ "docker" "wheel" ];
+    shell = pkgs.fish;
+    password = "Lokal";
+    
+  };
   nixpkgs.overlays = import ../../lib/overlays.nix ++ [
     (import ./vim.nix)
     (import (builtins.fetchTarball {
