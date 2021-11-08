@@ -23,7 +23,7 @@
   networking.hostName = "dev";
 
   # Set your time zone.
-  time.timeZone = "America/Los_Angeles";
+  time.timeZone = "Germany/Berlin";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -49,7 +49,7 @@
       xterm.enable = false;
       wallpaper.mode = "scale";
     };
-
+    videoDrivers = [ "vmware" ];
     displayManager = {
       defaultSession = "none+i3";
       lightdm.enable = true;
@@ -93,6 +93,7 @@
     niv
     rxvt_unicode
     xclip
+    
 
     # This is needed for the vmware user tools clipboard to work.
     # You can test if you don't need this by deleting this and seeing
@@ -103,10 +104,8 @@
     # my big monitor it doesn't detect the resolution either so we just
     # manualy create the resolution and switch to it with this script.
     # This script could be better but its hopefully temporary so just force it.
-    (writeShellScriptBin "xrandr-big" ''
-      xrandr --newmode "6016x3384_60.00"  1768.50  6016 6544 7216 8416  3384 3387 3392 3503 -hsync +vsync
-      xrandr --addmode Virtual-1 6016x3384_60.00
-      xrandr -s 6016x3384_60.00
+    (writeShellScriptBin "xrandr-4k" ''
+      xrandr -s 3840x2160
     '')
   ];
 

@@ -1,6 +1,5 @@
 {
   description = "NixOS systems and tools by mitchellh";
-
   inputs = {
     # Pin our primary nixpkgs repository. This is the main nixpkgs repository
     # we'll use for our configurations. Be very careful changing this because

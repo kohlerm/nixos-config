@@ -48,27 +48,41 @@ exec --no-startup-id xsetroot -solid $back
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+o exec rofi -show run
+bindsym $mod+d exec rofi -show run
 
 # start a terminal
-bindsym $mod+n exec kitty
-bindsym $mod+d split h
-bindsym $mod+Shift+d split v
+bindsym $mod+Return exec kitty
+bindsym $mod+h split h
+bindsym $mod+v split v
 
 # kill focused window
 bindsym $mod+w kill
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# change focus colemak
+bindsym $mod+n focus left
+bindsym $mod+e focus down
+bindsym $mod+i focus up
+bindsym $mod+o focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
 
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle

@@ -21,9 +21,12 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.tree
     pkgs.watch
     pkgs.zathura
-
+    pkgs.bat
     pkgs.tlaplusToolbox
     pkgs.tetex
+    pkgs.glxinfo
+    pkgs.sqlite
+    pkgs.firefox
   ];
 
   #---------------------------------------------------------------------
@@ -77,7 +80,15 @@ let sources = import ../../nix/sources.nix; in {
       gt = "git tag";
     };
   };
-
+  programs.vscode = {
+      enable = true;
+      package = pkgs.vscodium;    # You can skip this if you want to use the unfree version
+      extensions = with pkgs.vscode-extensions; [
+        # Some example extensions...
+        dracula-theme.theme-dracula
+        yzhang.markdown-all-in-one
+      ];
+    };
   programs.direnv= {
     enable = true;
     config = {
@@ -131,12 +142,9 @@ let sources = import ../../nix/sources.nix; in {
 
   programs.git = {
     enable = true;
-    userName = "Mitchell Hashimoto";
-    userEmail = "mitchell.hashimoto@gmail.com";
-    signing = {
-      key = "523D5DC389D273BC";
-      signByDefault = true;
-    };
+    userName = "Markus Kohler";
+    userEmail = "markus.kohler@gmail.com";
+    
     aliases = {
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
@@ -146,7 +154,7 @@ let sources = import ../../nix/sources.nix; in {
       color.ui = true;
       core.askPass = ""; # needs to be empty to use terminal for ask pass
       credential.helper = "store"; # want to make this more secure
-      github.user = "mitchellh";
+      github.user = "kohlerm";
       push.default = "tracking";
       init.defaultBranch = "main";
     };
@@ -185,12 +193,7 @@ let sources = import ../../nix/sources.nix; in {
       env.TERM = "xterm-256color";
 
       key_bindings = [
-        { key = "K"; mods = "Command"; chars = "ClearHistory"; }
-        { key = "V"; mods = "Command"; action = "Paste"; }
-        { key = "C"; mods = "Command"; action = "Copy"; }
-        { key = "Key0"; mods = "Command"; action = "ResetFontSize"; }
-        { key = "Equals"; mods = "Command"; action = "IncreaseFontSize"; }
-        { key = "Subtract"; mods = "Command"; action = "DecreaseFontSize"; }
+     
       ];
     };
   };
