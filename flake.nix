@@ -21,21 +21,22 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
-
+  
   outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, home-manager-unstable }: let
     mkVM = import ./lib/mkvm.nix;
   in {
     nixosConfigurations.vm-aarch64 = mkVM "vm-aarch64" {
       nixpkgs = nixpkgs-unstable;
-      home-manager = home-manager-unstable;
+       home-manager = home-manager-unstable;
       system = "aarch64-linux";
       user   = "mitchellh";
     };
-
+  
     nixosConfigurations.vm-intel = mkVM "vm-intel" {
       inherit nixpkgs home-manager;
       system = "x86_64-linux";
       user   = "mitchellh";
+      
     };
   };
 }

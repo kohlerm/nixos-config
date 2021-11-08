@@ -27,6 +27,10 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.glxinfo
     pkgs.sqlite
     pkgs.firefox
+    pkgs.termite
+    pkgs.hwinfo
+    
+
   ];
 
   #---------------------------------------------------------------------
@@ -43,7 +47,7 @@ let sources = import ../../nix/sources.nix; in {
   };
 
   home.file.".inputrc".source = ./inputrc;
-
+  home.file."wall.jpg".source = ./wallpaper.jpg;
   xdg.configFile."i3/config".text = builtins.readFile ./i3;
   xdg.configFile."rofi/config.rasi".text = builtins.readFile ./rofi;
 
@@ -86,9 +90,11 @@ let sources = import ../../nix/sources.nix; in {
       extensions = with pkgs.vscode-extensions; [
         # Some example extensions...
         dracula-theme.theme-dracula
-        yzhang.markdown-all-in-one
+        yzhang.markdown-all-in-one 
       ];
+       
     };
+  
   programs.direnv= {
     enable = true;
     config = {

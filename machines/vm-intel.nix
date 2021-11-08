@@ -5,6 +5,16 @@
 
   virtualisation.vmware.guest.enable = true;
 
+
+  #hardware.opengl.extraPackages = with pkgs; [ vaapiIntel libvdpau-va-gl vaapiVdpau intel-ocl ];
+ hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+    
+    ];
+  };
+  hardware.opengl.driSupport= true;
+  
   # Interface is this on Intel Fusion
   networking.interfaces.ens33.useDHCP = true;
 

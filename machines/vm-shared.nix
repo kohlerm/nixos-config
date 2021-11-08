@@ -58,6 +58,7 @@
       # display resolution. This is a known issue with VMware Fusion.
       sessionCommands = ''
         ${pkgs.xlibs.xset}/bin/xset r rate 200 40
+        ${pkgs.xorg.xrandr}/bin/xrandr -s '3840x2160'
       '' + (if currentSystem == "aarch64-linux" then ''
         ${pkgs.xorg.xrandr}/bin/xrandr -s '2880x1800'
       '' else "");
@@ -67,6 +68,18 @@
       i3.enable = true;
     };
   };
+
+
+services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+  services.picom = {
+    enable = true;
+    fade = true;
+    inactiveOpacity = 0.9;
+    shadow = true;
+    fadeDelta = 4;
+  };
+  
+ 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = true;
@@ -93,8 +106,8 @@
     niv
     rxvt_unicode
     xclip
-    
-
+    feh
+    autorandr
     # This is needed for the vmware user tools clipboard to work.
     # You can test if you don't need this by deleting this and seeing
     # if the clipboard sill works.
