@@ -1,5 +1,16 @@
 # NixOS System Configurations
 
+Forked for my own usage. 
+Main differences so far:
+- switch from kitty to alacritty using some nerd fonts
+- Hard coded 4k resolution
+- use i3-gaps with picom
+- some i3 config changes to adapt to my existing setup (colemak keyboard)
+
+
+---
+
+
 This repository contains my NixOS system configurations. This repository
 isn't meant to be a turnkey solution to copying my setup or learning Nix,
 so I want to apologize to anyone trying to look for something "easy". I've
