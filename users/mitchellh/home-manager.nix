@@ -193,11 +193,31 @@ let sources = import ../../nix/sources.nix; in {
     '';
   };
 
+  
+
   programs.alacritty = {
     enable = true;
 
     settings = {
       env.TERM = "xterm-256color";
+       font = {
+        normal = {
+          family = "Iosevka Nerd Font";
+          
+        };
+        size = 12;
+
+      };
+      colors = {
+        primary = {
+          foreground = "#dcdfe4";
+          background  = "#282c34";
+        };
+        selection = {
+          text = "#000000";
+          background  ="#FFFACD";
+        };
+      };
 
       key_bindings = [
      
@@ -269,7 +289,7 @@ let sources = import ../../nix/sources.nix; in {
   };
 
   xresources.extraConfig = builtins.readFile ./Xresources;
-
+  
   # Make cursor not tiny on HiDPI screens
   xsession.pointerCursor = {
     name = "Vanilla-DMZ";

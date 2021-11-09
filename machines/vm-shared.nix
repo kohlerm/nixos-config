@@ -87,7 +87,7 @@ services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
   # Manage fonts. We pull these from a secret directory since most of these
   # fonts require a purchase.
-  fonts = {
+/*   fonts = {
     fontDir.enable = true;
 
     fonts = [
@@ -98,6 +98,11 @@ services.xserver.windowManager.i3.package = pkgs.i3-gaps;
       })
     ];
   };
+ */
+fonts.fonts = with pkgs; [
+  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
+];
+  
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

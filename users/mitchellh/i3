@@ -58,7 +58,8 @@ floating_modifier $mod
 bindsym $mod+d exec rofi -show run
 
 # start a terminal
-bindsym $mod+Return exec kitty
+#bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+h split h
 bindsym $mod+v split v
 
