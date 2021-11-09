@@ -29,7 +29,8 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.firefox
     pkgs.termite
     pkgs.hwinfo
-    
+    pkgs.ripgrep
+    pkgs.ffmpeg
 
   ];
 

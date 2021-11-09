@@ -23,7 +23,7 @@
   networking.hostName = "dev";
 
   # Set your time zone.
-  time.timeZone = "Germany/Berlin";
+  time.timeZone = "Europe/Berlin";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -57,7 +57,7 @@
       # AARCH64: For now, on Apple Silicon, we must manually set the
       # display resolution. This is a known issue with VMware Fusion.
       sessionCommands = ''
-        ${pkgs.xlibs.xset}/bin/xset r rate 200 40
+        ${pkgs.xlibs.xset}/bin/xset r rate 200 60
         ${pkgs.xorg.xrandr}/bin/xrandr -s '3840x2160'
       '' + (if currentSystem == "aarch64-linux" then ''
         ${pkgs.xorg.xrandr}/bin/xrandr -s '2880x1800'
@@ -79,6 +79,7 @@ services.xserver.windowManager.i3.package = pkgs.i3-gaps;
     fadeDelta = 4;
   };
   
+
  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
