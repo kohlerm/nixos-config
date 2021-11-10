@@ -7,11 +7,10 @@
 
 
 
- #hardware.opengl = {
- #   enable = true;
- #   
- # };
-  #hardware.opengl.driSupport= false;
+ hardware.opengl = {
+    enable = true;
+ driSupport= true;
+  };
   
   # Interface is this on Intel Fusion
   networking.interfaces.ens33.useDHCP = true;
