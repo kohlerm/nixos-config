@@ -19,7 +19,7 @@ smart_gaps on
 gaps inner 5
 gaps outer 5
   
-exec --no-startup-id feh --bg-scale  ~/wall.jpg
+exec --no-startup-id feh --bg-fill  ~/.wall.jpg
 
 # Reading colors from resources
 set_from_resource $back			i3wm.background #1D1F21

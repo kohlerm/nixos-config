@@ -48,7 +48,7 @@ let sources = import ../../nix/sources.nix; in {
   };
 
   home.file.".inputrc".source = ./inputrc;
-  home.file."wall.jpg".source = ./wallpaper.jpg;
+  home.file.".wall.jpg".source = ./wallpaper.jpg;
   xdg.configFile."i3/config".text = builtins.readFile ./i3;
   xdg.configFile."rofi/config.rasi".text = builtins.readFile ./rofi;
 
