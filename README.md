@@ -3,7 +3,6 @@
 Forked for my own usage. 
 Main differences so far:
 - switch from kitty to alacritty using some nerd fonts
-- Hard coded 4k resolution
 - use i3-gaps with picom
 - some i3 config changes to adapt to my existing setup (colemak keyboard)
 
