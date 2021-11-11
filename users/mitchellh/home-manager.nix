@@ -82,14 +82,19 @@ services = {
       });
       shadow = true;
       blur = true;
+      fade = true;
+      fadeDelta = 10;
       experimentalBackends = false;
       extraOptions = ''
         blur-method = "dual_kawase";
         blur-strength = 10;
         corner-radius = 15;
         detect-client-opacity = true;
-        
+        rounded-corners-exclude = [
+      "class_g = 'i3bar'"
+      ];  
       '';
+      
       blurExclude = [
         "window_type *= 'menu'"
         "window_type *= 'dropdown_menu'"
@@ -98,6 +103,7 @@ services = {
         "class_g = 'i3-frame'"
         "class_g = 'kitty' && !focused"
       ];
+
       opacityRule = [
         "90:class_g != 'kitty' && !focused"
       ];
