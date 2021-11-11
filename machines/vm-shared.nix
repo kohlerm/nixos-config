@@ -70,13 +70,13 @@
 
 
 services.xserver.windowManager.i3.package = pkgs.i3-gaps;
-  services.picom = {
+  /* services.picom = {
     enable = true;
     fade = true;
     inactiveOpacity = 0.9;
     shadow = true;
     fadeDelta = 4;
-  };
+  }; */
   
 
  
@@ -119,6 +119,7 @@ fonts.fonts = with pkgs; [
     gtkmm3
     
 
+
     # VMware on M1 doesn't support automatic resizing yet and on
     # my big monitor it doesn't detect the resolution either so we just
     # manualy create the resolution and switch to it with this script.
@@ -128,6 +129,7 @@ fonts.fonts = with pkgs; [
     '')
   ];
 
+   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -8,8 +8,8 @@ set $mod Mod4
 font pango:Dank Mono 10
 
 # Window visuals
-new_window pixel 2
-new_float pixel 2
+new_window pixel 5
+new_float pixel 5
 floating_minimum_size 400x300
 floating_maximum_size -1x-1
 focus_follows_mouse yes

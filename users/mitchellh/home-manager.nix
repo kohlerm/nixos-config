@@ -32,6 +32,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.hwinfo
     pkgs.ripgrep
     pkgs.ffmpeg
+    pkgs.nix-prefetch-github
   ];
 
   #---------------------------------------------------------------------
@@ -66,6 +67,52 @@ let sources = import ../../nix/sources.nix; in {
   #---------------------------------------------------------------------
 
   programs.gpg.enable = true;
+
+services = {
+   picom = {
+      enable = true;
+      package = pkgs.picom.overrideAttrs (old: {
+        src = pkgs.fetchFromGitHub {
+          owner = "ibhagwan";
+          repo = "picom";
+          rev = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
+          sha256 = "1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=";
+
+        };
+      });
+      shadow = true;
+      blur = true;
+      experimentalBackends = false;
+      extraOptions = ''
+        blur-method = "dual_kawase";
+        blur-strength = 10;
+        corner-radius = 15;
+        detect-client-opacity = true;
+        
+      '';
+      blurExclude = [
+        "window_type *= 'menu'"
+        "window_type *= 'dropdown_menu'"
+        "window_type *= 'popup_menu'"
+        "window_type *= 'utility'"
+        "class_g = 'i3-frame'"
+        "class_g = 'kitty' && !focused"
+      ];
+      opacityRule = [
+        "90:class_g != 'kitty' && !focused"
+      ];
+      shadowExclude = [
+        "window_type *= 'menu'"
+        "window_type *= 'dropdown_menu'"
+        "window_type *= 'popup_menu'"
+        "window_type *= 'utility'"
+        "class_g = 'i3-frame'"
+        "class_g = 'Rofi'"
+        "class_g = 'kitty'"
+      ];
+    }; 
+  };
+
 
   programs.bash = {
     enable = true;
