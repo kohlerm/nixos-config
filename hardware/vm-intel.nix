@@ -24,4 +24,8 @@
 
   swapDevices = [ ];
 
+  environment.systemPackages = with pkgs; [
+    usbutils
+  ];
+
 }

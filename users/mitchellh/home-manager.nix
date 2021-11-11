@@ -2,7 +2,8 @@
 
 let sources = import ../../nix/sources.nix; in {
   xdg.enable = true;
-
+   # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
   #---------------------------------------------------------------------
   # Packages
   #---------------------------------------------------------------------
@@ -31,7 +32,6 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.hwinfo
     pkgs.ripgrep
     pkgs.ffmpeg
-
   ];
 
   #---------------------------------------------------------------------
@@ -149,6 +149,7 @@ let sources = import ../../nix/sources.nix; in {
 
   programs.git = {
     enable = true;
+    delta.enable = true;
     userName = "Markus Kohler";
     userEmail = "markus.kohler@gmail.com";
     
@@ -164,6 +165,7 @@ let sources = import ../../nix/sources.nix; in {
       github.user = "kohlerm";
       push.default = "tracking";
       init.defaultBranch = "main";
+      
     };
   };
 
