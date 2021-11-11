@@ -1,4 +1,4 @@
-{ config, pkgs, currentSystem, ... }:
+{ config, pkgs, currentSystem, lib, ... }:
 
 {
   # We require 5.14 for VMware Fusion on M1.
@@ -70,15 +70,11 @@
 
 
 services.xserver.windowManager.i3.package = pkgs.i3-gaps;
-  /* services.picom = {
-    enable = true;
-    fade = true;
-    inactiveOpacity = 0.9;
-    shadow = true;
-    fadeDelta = 4;
-  }; */
   
-
+          nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "vscode"
+           ];
+         
  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

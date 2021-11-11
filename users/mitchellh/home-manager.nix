@@ -92,7 +92,8 @@ services = {
         detect-client-opacity = true;
         rounded-corners-exclude = [
       "class_g = 'i3bar'"
-      ];  
+      ];
+      inactiveOpacity = 0.9;  
       '';
       
       blurExclude = [
@@ -138,9 +139,10 @@ services = {
       gt = "git tag";
     };
   };
+    
   programs.vscode = {
       enable = true;
-      package = pkgs.vscodium;    # You can skip this if you want to use the unfree version
+      #package = pkgs.vscodium;    # You can skip this if you want to use the unfree version
       extensions = with pkgs.vscode-extensions; [
         # Some example extensions...
         dracula-theme.theme-dracula
