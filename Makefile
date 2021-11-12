@@ -96,6 +96,17 @@ vm/switch:
 		sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1  NIXPKGS_ALLOW_UNFREE=1 nixos-rebuild switch --flake \"/nix-config#${NIXNAME}\" \
 	"
 
+localBuild:
+	rsync -av  \
+		--exclude='vendor/' \
+		--exclude='.git/' \
+		--exclude='.git-crypt/' \
+		--exclude='iso/' \
+		--rsync-path="sudo rsync" \
+		$(MAKEFILE_DIR)/ /nix-config
+	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1  NIXPKGS_ALLOW_UNFREE=1 nixos-rebuild switch --flake /nix-config#${NIXNAME}	
+
+
 # Build an ISO image
 iso/nixos.iso:
 	cd iso; ./build.sh

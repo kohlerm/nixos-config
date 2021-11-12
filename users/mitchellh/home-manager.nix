@@ -131,7 +131,7 @@ services = {
       ga = "git add";
       gc = "git commit";
       gco = "git checkout";
-      gcp = "git cherry-pick";
+       gcp = "git cherry-pick";
       gdiff = "git diff";
       gl = "git prettylog";
       gp = "git push";
@@ -139,15 +139,15 @@ services = {
       gt = "git tag";
     };
   };
-    
+  
   programs.vscode = {
       enable = true;
-      #package = pkgs.vscodium;    # You can skip this if you want to use the unfree version
-      extensions = with pkgs.vscode-extensions; [
-        # Some example extensions...
-        dracula-theme.theme-dracula
-        yzhang.markdown-all-in-one 
-      ];
+      #package = pkgs.vscodium;  
+   extensions = with pkgs.vscode-extensions; [
+    # not really needed only use file generated with ../scripts/update_vscode_exts.sh
+  ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-exts.nix).extensions; 
+  
+  
        
     };
   
