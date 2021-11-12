@@ -3,8 +3,12 @@
 Forked for my own usage. 
 Main differences so far:
 - switch from kitty to alacritty using some nerd fonts
-- use i3-gaps with picom
+- use i3-gaps with ibhagwan/picom (rounded corners, fading, opacity) 
 - some i3 config changes to adapt to my existing setup (colemak keyboard)
+- vscode with some important plugins
+- Makefile now supports running local build (not via ssh)
+
+User is still mitchellh, might make it configurable in the future
 
 
 ---

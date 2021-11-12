@@ -12,6 +12,12 @@
     sha256 = "0zd0n9f5z1f0ckzfjr38xw2zzmcxg1gjrava7yahg5cvdcw6l35b";
   }
   {
+    name = "bracket-pair-colorizer";
+    publisher = "CoenraadS";
+    version = "1.0.61";
+    sha256 = "0r3bfp8kvhf9zpbiil7acx7zain26grk133f0r0syxqgml12i652";
+  }
+  {
     name = "vscode-eslint";
     publisher = "dbaeumer";
     version = "2.2.2";
