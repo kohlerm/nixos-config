@@ -262,7 +262,7 @@ services = {
           family = "Iosevka Nerd Font";
           
         };
-        size = 12;
+        size = 11;
 
       };
       colors = {
