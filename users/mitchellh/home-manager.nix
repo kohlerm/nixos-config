@@ -46,6 +46,8 @@ let sources = import ../../nix/sources.nix; in {
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
     MANPAGER = "less -FirSwX";
+    #tmpfs is pretty small avoids problems with GO builds
+    GOTMPDIR="/dev/shm";
   };
 
   home.file.".inputrc".source = ./inputrc;
