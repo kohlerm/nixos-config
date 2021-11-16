@@ -30,6 +30,8 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
 
+  #approved certifcates bundle file itself not checked in; comment it out if not needed
+  security.pki.certificateFiles = [ ./approved.pem ];
   # Don't require password for sudo
   security.sudo.wheelNeedsPassword = false;
 
@@ -98,6 +100,8 @@ fonts.fonts = with pkgs; [
   (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
 ];
   
+ 
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -33,6 +33,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.ripgrep
     pkgs.ffmpeg
     pkgs.nix-prefetch-github
+    pkgs.cloudfoundry-cli
   ];
 
   #---------------------------------------------------------------------
