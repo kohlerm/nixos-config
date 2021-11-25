@@ -112,12 +112,10 @@ fonts.fonts = with pkgs; [
     rxvt_unicode
     xclip
     feh
-    autorandr
     # This is needed for the vmware user tools clipboard to work.
     # You can test if you don't need this by deleting this and seeing
     # if the clipboard sill works.
     gtkmm3
-    
 
 
     # VMware on M1 doesn't support automatic resizing yet and on
