@@ -18,7 +18,7 @@ focus_follows_mouse yes
 smart_gaps on
 gaps inner 5
 gaps outer 5
-  
+
 exec --no-startup-id feh --bg-fill  ~/.wall.jpg
 
 # Reading colors from resources
@@ -186,10 +186,10 @@ mode "$mode_resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

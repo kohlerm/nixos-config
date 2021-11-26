@@ -1,7 +1,11 @@
 # NixOS System Configurations
 
 Forked for my own usage. 
-Main differences so far:
+On the main branch is kind of working sway enviroment
+- no display manager
+- there seems to be no way to enable copy and paste from the host see openvm issue 493 for a workaround to get at least automatic mouse capturing and screen resizing working
+
+Main differences so far on the i3 branch:
 - switch from kitty to alacritty using some nerd fonts
 - use i3-gaps with ibhagwan/picom (rounded corners, fading, opacity) 
 - some i3 config changes to adapt to my existing setup (colemak keyboard)

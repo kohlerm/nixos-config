@@ -43,7 +43,7 @@
 
   # setup windowing environment
    services.xserver = {
-     enable = true;
+     #enable = true;
      autorun = true;
     layout = "us";
     dpi = 220;
@@ -54,10 +54,10 @@
     };
     videoDrivers = [ "vmware" ];
     displayManager = {
-      #defaultSession = "none+i3";
-      lightdm.enable = true;
-     # gdm.enable = true;
-     # gdm.wayland = true;
+     #defaultSession = "sway";
+     lightdm.enable = false;
+     #gdm.enable = true;
+     #gdm.wayland = true;
 
       # AARCH64: For now, on Apple Silicon, we must manually set the
       # display resolution. This is a known issue with VMware Fusion.
@@ -94,6 +94,8 @@
     # systemctl --user import-environment in startsway
     environment.PATH = lib.mkForce null;
     environment.WLR_NO_HARDWARE_CURSORS = "1";
+    environment.MOZ_ENABLE_WAYLAND="1";
+    environment.SDL_VIDEODRIVER="wayland";
     serviceConfig = {
       Type = "simple";
       ExecStart = ''
@@ -146,6 +148,13 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = true;
+
+programs.waybar.enable = true;
+environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && startsway
+  '';
+
+ systemd.user.services.waybar.unitConfig.wants = [ "sway.service" ];
 
   # Manage fonts. We pull these from a secret directory since most of these
   # fonts require a purchase.

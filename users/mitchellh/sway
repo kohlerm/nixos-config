@@ -10,6 +10,7 @@
 
 output Virtual-1 scale 2
 
+
 smart_gaps on
 gaps inner 5
 gaps outer 5
@@ -104,7 +105,8 @@ bindsym $mod+Shift+c reload
 #bindsym $mod+Shift+d focus child
 
 
-input * {
-
+input type:Keyboard {
+repeat_rate 100
+repeat_delay 100
 xkb_variant nodeadkeys
 }
