@@ -16,7 +16,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.git-crypt
     pkgs.htop
     pkgs.jq
-    pkgs.rofi
+    #pkgs.rofi
     pkgs.go
     pkgs.gopls
     pkgs.tree
@@ -55,8 +55,10 @@ let sources = import ../../nix/sources.nix; in {
 
   home.file.".inputrc".source = ./inputrc;
   home.file.".wall.jpg".source = ./wallpaper.jpg;
-  xdg.configFile."i3/config".text = builtins.readFile ./i3;
-  xdg.configFile."rofi/config.rasi".text = builtins.readFile ./rofi;
+  #xdg.configFile."i3/config".text = builtins.readFile ./i3;
+  xdg.configFile."sway/config".text = builtins.readFile ./sway;
+  #xdg.configFile."rofi/config.rasi".text = builtins.readFile ./rofi;
+  xdg.configFile."wofi/config.rasi".text = builtins.readFile ./wofi;
 
   # tree-sitter parsers
   xdg.configFile."nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";

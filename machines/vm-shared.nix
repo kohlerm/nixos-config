@@ -42,8 +42,9 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # setup windowing environment
-  services.xserver = {
-    enable = true;
+   services.xserver = {
+     enable = true;
+     autorun = true;
     layout = "us";
     dpi = 220;
 
@@ -53,8 +54,10 @@
     };
     videoDrivers = [ "vmware" ];
     displayManager = {
-      defaultSession = "none+i3";
+      #defaultSession = "none+i3";
       lightdm.enable = true;
+     # gdm.enable = true;
+     # gdm.wayland = true;
 
       # AARCH64: For now, on Apple Silicon, we must manually set the
       # display resolution. This is a known issue with VMware Fusion.
@@ -66,18 +69,80 @@
     };
 
     windowManager = {
-      i3.enable = true;
+   #   i3.enable = true;
     };
   };
 
 
-services.xserver.windowManager.i3.package = pkgs.i3-gaps;
-  
+#services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+
+ systemd.user.targets.sway-session = {
+    description = "Sway compositor session";
+    documentation = [ "man:systemd.special(7)" ];
+    bindsTo = [ "graphical-session.target" ];
+    wants = [ "graphical-session-pre.target" ];
+    after = [ "graphical-session-pre.target" ];
+  };
+
+  systemd.user.services.sway = {
+    description = "Sway - Wayland window manager";
+    documentation = [ "man:sway(5)" ];
+    bindsTo = [ "graphical-session.target" ];
+    wants = [ "graphical-session-pre.target" ];
+    after = [ "graphical-session-pre.target" ];
+    # We explicitly unset PATH here, as we want it to be set by
+    # systemctl --user import-environment in startsway
+    environment.PATH = lib.mkForce null;
+    environment.WLR_NO_HARDWARE_CURSORS = "1";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''
+        ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway --debug
+      '';
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
+  /* services.redshift = {
+    enable = true;
+    # Redshift with wayland support isn't present in nixos-19.09 atm. You have to cherry-pick the commit from https://github.com/NixOS/nixpkgs/pull/68285 to do that.
+    package = pkgs.redshift-wlr;
+  }; */
+
           nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
              "vscode"
            ];
-         
- 
+
+           programs = {
+             sway = {
+               enable = true;
+               extraPackages = with pkgs;
+               [
+                 wofi
+                 swayidle
+                 swaylock
+                 weston
+                 wl-clipboard
+                 xwayland
+                 waybar
+               ];
+               extraSessionCommands = "
+            export XKB_DEFAULT_LAYOUT=us
+            export XKB_DEFAULT_VARIANT=nodeadkeys
+            export WLR_NO_HARDWARE_CURSORS=1
+            export MOZ_ENABLE_WAYLAND=1
+              export SDL_VIDEODRIVER=wayland
+        # needs qt5.qtwayland in systemPackages
+        # for older version of Qt
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION='1'
+        # Fix for some Java AWT applications (e.g. Android Studio),
+        # use this if they aren't displayed properly:
+        export _JAVA_AWT_WM_NONREPARENTING=1
+               ";
+             };
+           };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = true;
@@ -99,8 +164,8 @@ services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 fonts.fonts = with pkgs; [
   (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
 ];
-  
- 
+
+
 
 
   # List packages installed in system profile. To search, run:
@@ -116,7 +181,7 @@ fonts.fonts = with pkgs; [
     # You can test if you don't need this by deleting this and seeing
     # if the clipboard sill works.
     gtkmm3
-
+    foot
 
     # VMware on M1 doesn't support automatic resizing yet and on
     # my big monitor it doesn't detect the resolution either so we just
@@ -125,9 +190,25 @@ fonts.fonts = with pkgs; [
     (writeShellScriptBin "xrandr-4k" ''
       xrandr -s 3840x2160
     '')
+    (
+      pkgs.writeTextFile {
+        name = "startsway";
+        destination = "/bin/startsway";
+        executable = true;
+        text = ''
+          #! ${pkgs.bash}/bin/bash
+          # first import environment variables from the login manager
+          systemctl --user import-environment
+          # then start the service
+          exec systemctl --user start sway.service
+        '';
+      }
+    )
+
+
   ];
 
-   
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
