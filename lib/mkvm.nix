@@ -6,6 +6,7 @@ nixpkgs.lib.nixosSystem rec {
   inherit system;
 
   modules = [
+    
     ../hardware/${name}.nix
     ../machines/${name}.nix
     ../users/${user}/nixos.nix

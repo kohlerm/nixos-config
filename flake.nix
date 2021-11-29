@@ -5,13 +5,14 @@
     # we'll use for our configurations. Be very careful changing this because
     # it'll impact your entire system.
     nixpkgs.url = "github:nixos/nixpkgs/release-21.05";
-
+    
     home-manager = {
       url = "github:nix-community/home-manager/release-21.05";
 
       # We want home-manager to use the same set of nixpkgs as our system.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-wayland  = { url = "github:nix-community/nixpkgs-wayland"; };
 
     # For our aarch64 VM, we use different versions since there are some
     # changes that are required for aarch64 to build in reliably.
@@ -22,7 +23,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, home-manager-unstable }:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, home-manager-unstable, nixpkgs-wayland }:
     let
       mkVM = import ./lib/mkvm.nix;
     in

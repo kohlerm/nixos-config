@@ -110,3 +110,7 @@ repeat_rate 100
 repeat_delay 100
 xkb_variant nodeadkeys
 }
+
+bar {
+    status_command i3status
+}
