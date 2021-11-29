@@ -1,7 +1,7 @@
 # NixOS System Configurations
 
 Forked for my own usage. 
-On the main branch is kind of working sway enviroment
+On the main branch you will find a  kind of working sway enviroment (the i3 branch is much mor usable see below)
 - no display manager
 - there seems to be no way to enable copy and paste from the host see openvm issue 493 for a workaround to get at least automatic mouse capturing and screen resizing working
 
