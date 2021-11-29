@@ -36,6 +36,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.cloudfoundry-cli
     pkgs.nixpkgs-fmt
     pkgs.dbeaver
+    pkgs.google-chrome
   ];
 
   #---------------------------------------------------------------------

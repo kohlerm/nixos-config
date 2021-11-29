@@ -8,8 +8,12 @@
 
 # Read `man 5 sway` for a complete reference.
 
-output Virtual-1 scale 2
 
+#Scale for 4k
+#output Virtual-1 scale 2
+
+#Scale for 34 inch
+output Virtual-1 scale 1.5
 
 smart_gaps on
 gaps inner 5
@@ -18,8 +22,9 @@ gaps outer 5
 set $mod Mod4
 
 set $term alacritty
-bindsym $mod+d exec wofi -show run
+set $menu wofi --show run --gtk-dark
 
+bindsym $mod+o exec $menu
 
 floating_modifier $mod
 
@@ -114,4 +119,5 @@ xkb_variant nodeadkeys
 bar {
     status_command i3status
 }
-exec flashfocus -t 200 -o 0.4 
+exec flashfocus -t 100 -o 0.9 
+output "*" background "~/.wall.jpg" fill
