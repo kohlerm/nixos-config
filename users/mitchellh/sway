@@ -114,3 +114,4 @@ xkb_variant nodeadkeys
 bar {
     status_command i3status
 }
+exec flashfocus -t 200 -o 0.4 

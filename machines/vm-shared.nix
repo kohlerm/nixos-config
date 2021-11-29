@@ -154,6 +154,8 @@ environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && startsway
   '';
 
+
+
  systemd.user.services.waybar.unitConfig.wants = [ "sway.service" ];
 
   # Manage fonts. We pull these from a secret directory since most of these
@@ -191,6 +193,7 @@ fonts.fonts = with pkgs; [
     # if the clipboard sill works.
     gtkmm3
     foot
+    flashfocus
 
     # VMware on M1 doesn't support automatic resizing yet and on
     # my big monitor it doesn't detect the resolution either so we just
