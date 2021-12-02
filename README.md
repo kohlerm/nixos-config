@@ -1,19 +1,21 @@
 # NixOS System Configurations
 
-Forked for my own usage. 
-On the main branch you will find a  kind of working sway enviroment (the i3 branch is much mor usable see below)
+Forked for my own usage.
 - no display manager
 - there seems to be no way to enable copy and paste from the host see openvm issue 493 for a workaround to get at least automatic mouse capturing and screen resizing working
 
 Main differences so far on the i3 branch:
 - switch from kitty to alacritty using some nerd fonts
-- use i3-gaps with ibhagwan/picom (rounded corners, fading, opacity) 
+- use i3-gaps with ibhagwan/picom (rounded corners, fading, opacity)
 - some i3 config changes to adapt to my existing setup (colemak keyboard)
 - vscode with some important plugins
 - Makefile now supports running local build (not via ssh)
 
 User is still mitchellh, might make it configurable in the future
 
+
+there is an experimental branch "sway" for using the wayland based sway window manager
+Since I use VMware ATM this is only kind of usable since copy and paste from the host do not work.
 
 ---
 
