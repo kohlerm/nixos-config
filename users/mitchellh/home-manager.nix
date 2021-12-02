@@ -28,7 +28,6 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.glxinfo
     pkgs.sqlite
     pkgs.firefox
-    pkgs.termite
     pkgs.hwinfo
     pkgs.ripgrep
     pkgs.ffmpeg
@@ -169,7 +168,10 @@ services = {
       };
     };
   };
-
+   programs.direnv.nix-direnv.enable = true;
+  # optional for nix flakes support
+  programs.direnv.nix-direnv.enableFlakes = true;
+  
   programs.fish = {
     enable = true;
     interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" [
