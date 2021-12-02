@@ -1,4 +1,4 @@
-set $mod Mod4
+    set $mod Mod4
 
 #----------------------------------------------------------------------
 # Look & Feel
@@ -55,7 +55,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+d exec rofi -show run
+bindsym $mod+o exec rofi -show run
 
 # start a terminal
 #bindsym $mod+Return exec kitty
@@ -67,10 +67,10 @@ bindsym $mod+v split v
 bindsym $mod+w kill
 
 # change focus colemak
-bindsym $mod+n focus left
-bindsym $mod+e focus down
-bindsym $mod+i focus up
-bindsym $mod+o focus right
+#bindsym $mod+n focus left
+#bindsym $mod+e focus down
+#bindsym $mod+i focus up
+#bindsym $mod+o focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -186,10 +186,10 @@ mode "$mode_resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Up resize grow height 10 px or 10 ppt
         bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
