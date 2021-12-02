@@ -12,8 +12,7 @@
       # We want home-manager to use the same set of nixpkgs as our system.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-wayland  = { url = "github:nix-community/nixpkgs-wayland"; };
-
+  
     # For our aarch64 VM, we use different versions since there are some
     # changes that are required for aarch64 to build in reliably.
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -23,7 +22,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, home-manager-unstable, nixpkgs-wayland }:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, home-manager-unstable }:
     let
       mkVM = import ./lib/mkvm.nix;
     in
