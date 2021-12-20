@@ -2,7 +2,7 @@
 
 {
   # We require 5.14 for VMware Fusion on M1.
-  boot.kernelPackages = pkgs.linuxPackages_5_14;
+  #boot.kernelPackages = pkgs.linuxPackages_5_14;
 
   # use unstable nix so we can access flakes
   nix = {

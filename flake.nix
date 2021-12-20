@@ -35,7 +35,8 @@
       };
 
       nixosConfigurations.vm-intel = mkVM "vm-intel" {
-        inherit nixpkgs home-manager;
+        nixpkgs = nixpkgs-unstable;
+        home-manager = home-manager-unstable;
         system = "x86_64-linux";
         user = "mitchellh";
 
