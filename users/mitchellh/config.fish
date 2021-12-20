@@ -40,6 +40,11 @@ if not __ssh_agent_is_started
     __ssh_agent_start
 end
 
+
+if status is-interactive
+
+ atuin init fish | source
+end
 #-------------------------------------------------------------------------------
 # Vim
 #-------------------------------------------------------------------------------

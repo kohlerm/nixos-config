@@ -35,6 +35,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.cloudfoundry-cli
     pkgs.nixpkgs-fmt
     pkgs.dbeaver
+  
   ];
 
   #---------------------------------------------------------------------
@@ -163,7 +164,6 @@ services = {
           "$HOME/code/go/src/github.com/hashicorp"
           "$HOME/code/go/src/github.com/mitchellh"
         ];
-
         exact = ["$HOME/.envrc"];
       };
     };

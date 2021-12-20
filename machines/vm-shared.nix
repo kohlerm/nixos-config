@@ -10,7 +10,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-   };
+  };
 
   # We expect to run the VM on hidpi machines.
   hardware.video.hidpi.enable = true;
@@ -71,36 +71,36 @@
   };
 
 
-services.xserver.windowManager.i3.package = pkgs.i3-gaps;
-  
-          nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-             "vscode"
-           ];
-         
- 
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "vscode"
+  ];
+
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = true;
 
   # Manage fonts. We pull these from a secret directory since most of these
   # fonts require a purchase.
-/*   fonts = {
+  /*   fonts = {
     fontDir.enable = true;
 
     fonts = [
-      (builtins.path {
-        name = "custom-fonts";
-        path = ../secret/fonts;
-        recursive = true;
-      })
+    (builtins.path {
+    name = "custom-fonts";
+    path = ../secret/fonts;
+    recursive = true;
+    })
     ];
-  };
- */
-fonts.fonts = with pkgs; [
-  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
-];
-  
- 
+    };
+  */
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
+  ];
+
+
 
 
   # List packages installed in system profile. To search, run:
@@ -116,7 +116,7 @@ fonts.fonts = with pkgs; [
     # You can test if you don't need this by deleting this and seeing
     # if the clipboard sill works.
     gtkmm3
-
+    atuin
 
     # VMware on M1 doesn't support automatic resizing yet and on
     # my big monitor it doesn't detect the resolution either so we just
@@ -127,7 +127,7 @@ fonts.fonts = with pkgs; [
     '')
   ];
 
-   
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

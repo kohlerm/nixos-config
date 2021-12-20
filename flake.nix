@@ -12,7 +12,7 @@
       # We want home-manager to use the same set of nixpkgs as our system.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
     # For our aarch64 VM, we use different versions since there are some
     # changes that are required for aarch64 to build in reliably.
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
