@@ -3,7 +3,7 @@
 let sources = import ../../nix/sources.nix; in {
   xdg.enable = true;
    # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
   #---------------------------------------------------------------------
   # Packages
   #---------------------------------------------------------------------
@@ -161,8 +161,8 @@ services = {
     config = {
       whitelist = {
         prefix= [
-          "$HOME/code/go/src/github.com/hashicorp"
-          "$HOME/code/go/src/github.com/mitchellh"
+      
+          "$HOME/code/go/src/github.com/kohlerm"
         ];
         exact = ["$HOME/.envrc"];
       };

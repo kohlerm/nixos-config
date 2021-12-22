@@ -31,14 +31,14 @@
         nixpkgs = nixpkgs-unstable;
         home-manager = home-manager-unstable;
         system = "aarch64-linux";
-        user = "mitchellh";
+        user = "kohlerm";
       };
 
       nixosConfigurations.vm-intel = mkVM "vm-intel" {
         nixpkgs = nixpkgs-unstable;
         home-manager = home-manager-unstable;
         system = "x86_64-linux";
-        user = "mitchellh";
+        user = "kohlerm";
 
       };
     };

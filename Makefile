@@ -1,7 +1,7 @@
 # Connectivity info for Linux VM
 NIXADDR = 192.168.81.128
 NIXPORT ?= 22
-NIXUSER ?= mitchellh
+NIXUSER ?= kohlerm
 
 # Settings
 NIXBLOCKDEVICE ?= sda
