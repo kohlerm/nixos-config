@@ -11,7 +11,7 @@ Main differences so far on the i3 branch:
 - vscode with some important plugins
 - Makefile now supports running local build (not via ssh)
 
-User is still mitchellh, might make it configurable in the future
+User changed to kohlerm, might make it configurable in the future
 
 
 there is an experimental branch "sway" for using the wayland based sway window manager
