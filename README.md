@@ -8,7 +8,7 @@ Main differences so far:
 - vscode with some important plugins
 - Makefile now supports running local build (not via ssh)
 
-User is still mitchellh, might make it configurable in the future
+User changed to kohlerm, might make it configurable in the future
 
 
 ---
