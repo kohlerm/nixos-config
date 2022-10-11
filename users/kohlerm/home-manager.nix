@@ -37,7 +37,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.dbeaver
     pkgs.macchina
     pkgs.sd
-  
+
   ];
 
   #---------------------------------------------------------------------
@@ -59,15 +59,23 @@ let sources = import ../../nix/sources.nix; in {
   home.file.".wall.jpg".source = ./wallpaper.jpg;
   xdg.configFile."i3/config".text = builtins.readFile ./i3;
   xdg.configFile."rofi/config.rasi".text = builtins.readFile ./rofi;
+  xdg.configFile."fish/conf.d/plugin-bobthefish.fish".text = lib.mkAfter ''
+    for f in $plugin_dir/*.fish
+      source $f
+    end
+    '';
+  
+
+
 
   # tree-sitter parsers
-  xdg.configFile."nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
-  xdg.configFile."nvim/queries/proto/folds.scm".source =
-    "${sources.tree-sitter-proto}/queries/folds.scm";
-  xdg.configFile."nvim/queries/proto/highlights.scm".source =
-    "${sources.tree-sitter-proto}/queries/highlights.scm";
-  xdg.configFile."nvim/queries/proto/textobjects.scm".source =
-    ./textobjects.scm;
+  #xdg.configFile."nvim/parser/proto.so".source = "${pkgs.tree-sitter-proto}/parser";
+  #xdg.configFile."nvim/queries/proto/folds.scm".source =
+  #  "${sources.tree-sitter-proto}/queries/folds.scm";
+  #xdg.configFile."nvim/queries/proto/highlights.scm".source =
+  #  "${sources.tree-sitter-proto}/queries/highlights.scm";
+  #xdg.configFile."nvim/queries/proto/textobjects.scm".source =
+  #  ./textobjects.scm;
 
   #---------------------------------------------------------------------
   # Programs
@@ -100,9 +108,9 @@ services = {
         rounded-corners-exclude = [
       "class_g = 'i3bar'"
       ];
-      inactiveOpacity = 0.9;  
+      inactiveOpacity = 0.9;
       '';
-      
+
       blurExclude = [
         "window_type *= 'menu'"
         "window_type *= 'dropdown_menu'"
@@ -124,7 +132,7 @@ services = {
         "class_g = 'Rofi'"
         "class_g = 'kitty'"
       ];
-    }; 
+    };
   };
 
 
@@ -146,24 +154,24 @@ services = {
       gt = "git tag";
     };
   };
-  
+
   programs.vscode = {
       enable = true;
-      #package = pkgs.vscodium;  
+      #package = pkgs.vscodium;
    extensions = with pkgs.vscode-extensions; [
     # not really needed only use file generated with ../scripts/update_vscode_exts.sh
-  ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-exts.nix).extensions; 
-  
-  
-       
+  ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-exts.nix).extensions;
+
+
+
     };
-  
+
   programs.direnv= {
     enable = true;
     config = {
       whitelist = {
         prefix= [
-      
+
           "$HOME/code/go/src/github.com/kohlerm"
         ];
         exact = ["$HOME/.envrc"];
@@ -172,17 +180,22 @@ services = {
   };
    programs.direnv.nix-direnv.enable = true;
   # optional for nix flakes support
-  programs.direnv.nix-direnv.enableFlakes = true;
-  
+#  programs.direnv.nix-direnv.enableFlakes = true;
+
   programs.fish = {
     enable = true;
-    interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" [
-      "source ${sources.theme-bobthefish}/fish_prompt.fish"
-      "source ${sources.theme-bobthefish}/fish_right_prompt.fish"
-      "source ${sources.theme-bobthefish}/fish_title.fish"
-      (builtins.readFile ./config.fish)
-      "set -g SHELL ${pkgs.fish}/bin/fish"
-    ]);
+    loginShellInit = ''
+      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+        fenv source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+      end
+
+      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+        fenv source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+      end
+      '';
+
+
+    
 
     shellAliases = {
       ga = "git add";
@@ -216,7 +229,7 @@ services = {
     delta.enable = true;
     userName = "Markus Kohler";
     userEmail = "markus.kohler@gmail.com";
-    
+
     aliases = {
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
@@ -229,7 +242,7 @@ services = {
       github.user = "kohlerm";
       push.default = "tracking";
       init.defaultBranch = "main";
-      
+
     };
   };
 
@@ -259,7 +272,7 @@ services = {
     '';
   };
 
-  
+
 
   programs.alacritty = {
     enable = true;
@@ -269,7 +282,7 @@ services = {
        font = {
         normal = {
           family = "Iosevka Nerd Font";
-          
+
         };
         size = 11;
 
@@ -286,7 +299,7 @@ services = {
       };
 
       key_bindings = [
-     
+
       ];
     };
   };
@@ -315,21 +328,21 @@ services = {
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim-unwrapped;
 
     plugins = with pkgs; [
-      customVim.vim-fish
-      customVim.vim-fugitive
-      customVim.vim-misc
-      customVim.vim-tla
-      customVim.pigeon
-      customVim.AfterColors
+      #vim-fish
+      #vim-fugitive
+      #vim-misc
+      #vim-tla
+      pigeon
+      #AfterColors
 
-      customVim.vim-nord
-      customVim.nvim-lspconfig
-      customVim.nvim-treesitter
-      customVim.nvim-treesitter-playground
-      customVim.nvim-treesitter-textobjects
+      #vim-nord
+      #nvim-lspconfig
+      #nvim-treesitter
+      #nvim-treesitter-playground
+      #nvim-treesitter-textobjects
 
       vimPlugins.ctrlp
       vimPlugins.vim-airline
@@ -355,7 +368,7 @@ services = {
   };
 
   xresources.extraConfig = builtins.readFile ./Xresources;
-  
+
   # Make cursor not tiny on HiDPI screens
   xsession.pointerCursor = {
     name = "Vanilla-DMZ";

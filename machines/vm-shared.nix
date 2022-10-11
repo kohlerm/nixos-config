@@ -59,7 +59,7 @@
       # AARCH64: For now, on Apple Silicon, we must manually set the
       # display resolution. This is a known issue with VMware Fusion.
       sessionCommands = ''
-        ${pkgs.xlibs.xset}/bin/xset r rate 200 60
+        ${pkgs.xorg.xset}/bin/xset r rate 200 60
       '' + (if currentSystem == "aarch64-linux" then ''
         ${pkgs.xorg.xrandr}/bin/xrandr -s '2880x1800'
       '' else "");
@@ -109,7 +109,7 @@
     gnumake
     killall
     niv
-    rxvt_unicode
+    rxvt-unicode-unwrapped
     xclip
     feh
     # This is needed for the vmware user tools clipboard to work.
